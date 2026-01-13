@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="week2.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An in-depth guide to HTML meta tags.">
+    <meta name="author" content="Jane Doe">
+                  
+    <title>Week 1 Ponder</title>
+
+</head>
+<body>
+    <div id="content">
+        <h1>HTML, CSS, and JS</h1>
+            <p>The foundational technologies that power websites and web applications</p>
+        <hr>
+        <img src="https://wddbyui.github.io/wdd131/images/trifecta.png" alt="JS, CSS, and HTML logos">
+        <div id="topics">
+            <h2>HyperText Markup Language</h2>
+            <ul class="list">
+                <li>Defines the structure and content of a web page.</li>
+                <li>Without HTML there's nothing for the browser to display.</li>
+            </ul>
+            <h2>Cascading Style Sheets</h2>
+            <ul class="list">
+                <li>Controls how the HTML elements look.</li>
+                <li>Without CSS pages look plain and unstyled.</li>
+            </ul>
+            <h2>JavaScript</h2>
+            <ul class="list">
+                <li>Adds interactivity and dynamic behavior.</li>
+                <li>Without JavaScript nothing on the page responds dynamically to user actions.</li>
+            </ul>
+        </div>
+        
+            
+    </div>     
+        <label for="webdevlist">Choose One:</label>
+        <select name="code" id="webdevlist">
+            <option>Choose One:</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+        </select>
+        
+        <script> 
+            let selectElem = document.getElementById('webdevlist');
+            selectElem.addEventListener('change', function(){
+                let codeValue = selectElem.value;
+                console.log(codeValue);
+                if (codeValue === 'html') {
+                    document.getElementById('content').style.visibility = 'hidden';
+                }
+                else {
+                    document.getElementById('content').style.visibility = 'visible';
+                }
+
+                if (codeValue === 'css') {
+                    document.styleSheets[0].disabled = true;
+                }
+                else {
+                    document.styleSheets[0].disabled = false;
+                }
+
+                if (codeValue === 'js') {
+                    document.getElementsByClassName('list')[0].style.fontWeight = 'bold';
+                    document.getElementsByClassName('list')[0].style.color = 'red';
+                    document.getElementsByClassName('list')[1].style.fontStyle = 'italic';
+                    document.getElementsByClassName('list')[1].style.backgroundColor = 'lightblue';
+                    document.getElementsByClassName('list')[2].style.textDecoration = 'underline';
+
+                }
+                else {
+                    document.getElementsByClassName('list')[0].style.fontWeight = 'initial';
+                    document.getElementsByClassName('list')[0].style.color = 'initial';
+                    document.getElementsByClassName('list')[1].style.fontStyle = 'initial';
+                    document.getElementsByClassName('list')[1].style.backgroundColor = 'initial';
+                    document.getElementsByClassName('list')[2].style.textDecoration = 'initial';
+                }
+            });       
+        </script>
+</body>
+</html>

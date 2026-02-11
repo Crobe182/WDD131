@@ -15,6 +15,7 @@ header h1{
     color: white;
     font-size: 1rem;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 nav {
@@ -53,6 +54,26 @@ h2{
     border: 1px solid #aaa;
 }
 
+dialog img {
+    height: 75%;
+    display: block;
+    margin: 20vh auto;
+}
+dialog {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    border: 1px solid red;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10vh;
+    right: 10vh;
+    padding: 3px 6px;
+    font-size: 1.5em;
+} 
+
 footer {
     background-color: #2f7ed8;
     color: white;
@@ -60,13 +81,13 @@ footer {
     padding: 0.5 rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
     .menu-btn {
         display: none;
     }
@@ -84,5 +105,24 @@ footer {
 
     .gallery {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    dialog img {
+        width: 60%;
+        margin: 15vh auto;
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 15vh;
+    }
+
+    .viewer {
+        margin: 50px;
+        padding: 50px;
+    }
+
+    .viewer img {
+        max-width: 800px;
     }
 }

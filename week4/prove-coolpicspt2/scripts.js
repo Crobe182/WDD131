@@ -3,7 +3,7 @@ const nav = document.querySelector('nav');
 const gallery = document.querySelector('.gallery');
 const modal = document.querySelector('dialog');
 const modalImage = modal.querySelector('img');
-const close_btn = document.querySelector('.close-btn');
+const closeButton = document.querySelector('.closeButton');
 
 menu_btn.addEventListener('click', () => {
     nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
@@ -30,7 +30,7 @@ function openModal(e) {
     modal.showModal();
 }
 
-close_btn.addEventListener('click', () => {
+closeButton.addEventListener('click', () => {
     modal.close();
 });
 

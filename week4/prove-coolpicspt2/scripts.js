@@ -3,14 +3,16 @@ const nav = document.querySelector('nav');
 const gallery = document.querySelector('.gallery');
 const modal = document.querySelector('dialog');
 const modalImage = modal.querySelector('img');
-const closeButton = document.querySelector('.closeButton');
+const closeButton = modal.querySelector('.closeButton');
+console.log(gallery);
 
+// nav menu toggle ----------------------------
 menu_btn.addEventListener('click', () => {
     nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
 });
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 1000) {
+    if (window.innerWidth > 900) {
         menu_btn.style.display = 'none';
         nav.style.display = 'block';
     } else {
@@ -19,19 +21,22 @@ window.addEventListener('resize', () => {
     }
 });
 
+// modal image viewer ----------------------------
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {
-    if (e.target.tagName !== 'IMG') return;
+    if (e.target.tagName !== "IMG") return;
 
     const imgSrc = e.target.src;
-
-    modalImage.src = imgSrc;
+    const largeSrc = imgSrc.replace("-sm", "-full");
+    modalImage.src = largeSrc;
     modal.showModal();
 }
 
-closeButton.addEventListener('click', () => {
+closeButton.addEventListener('click', (event) => {
+    if (event.target === closeButton) {
     modal.close();
+    }
 });
 
 modal.addEventListener('click', (event) => {

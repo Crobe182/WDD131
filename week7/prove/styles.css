@@ -8,18 +8,16 @@ body{
 
 .card-container{
     display: grid;
-    grid-template-columns: 60px 1fr 60px;
-    grid-template-rows: 40px 1fr 40px;
-    width: 600px;
-    height: 320px;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: 80px 200px 80px;
+    width: 650px;
+    height: 400px;
 }
 
 .card{
-    width: 100%;
-    height: 200px;
     background: #ccc;
     border-radius: 12px;
-    padding: 20px;
+    padding: 20px 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -27,46 +25,74 @@ body{
     grid-column: 1/3;
     grid-row: 1/3;
     z-index: 2;
-    width: 100%;
-    height: 100%;
     display: grid;
-    gap: 15px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border-radius: 12px;
     background: #d3d3d3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .back{
-    display: grid;
+    grid-column: 2/4;
+    grid-row: 2/4;
     z-index: 1;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 120px 20px 1fr;
+    border-radius: 12px;
     background: #c0c0c0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
 }
 
 .black-strip{
-    height: 40px;
+    grid-column: 2/4;
     background: black;
-    margin-bottom: 30px;
+    height: 60px;
 }
 
 .cvc-area{
-    width: 120px;
-    margin-left: auto;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    padding-left: 50px;
 }
 
-.top-row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#cvc{
+    height: 30px;
+    width: 60px;
 }
 
-.bottom-row{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+.card-number{
+    grid-column: 1/3;
+    grid-row: 2/3;
 }
 
-#card-expiration{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#cardNumber{
+    height: 30px;
+}
+
+.card-holder{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+#cardHolder{
+    height: 30px;
+}
+
+.card-expiration{
     gap: 5px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#month{
+    height: 30px;
+}
+
+#year{
+    height: 30px;
 }
 
 label{
@@ -76,11 +102,12 @@ label{
 }
 
 button{
-    margin-top: 100px;
     padding: 12px;
     width: 200px;
     border-radius: 10px;
     border: 2px solid black;
     background: white;
     cursor: pointer;
+    display: block;
+    justify-self: right;
 }

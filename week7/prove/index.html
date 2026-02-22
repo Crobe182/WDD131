@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit Card Form</title>
     <link rel="stylesheet" href="styles.css"/>
-    <script src="script.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <main>
@@ -24,15 +24,12 @@
                  
                  <!-- FRONT CARD -->
                 <div class = "card front">
-                    <div class = "top-row">
                         <span class = "total">Total: $199</span>
                         <span class = "card-icon">💳</span>
-                    </div>
                     <div class = "card-number">
                         <label for = "cardNumber">CARD NUMBER</label>
                         <input type="text" id = "cardNumber" maxlength="16" placeholder="1234 5678 9101 1020"/>
                     </div>
-                    <div class = "bottom-row">
                         <div class = "card-holder">
                             <label for="cardHolder">CARD HOLDER</label>
                             <input type="text" id = "cardHolder" placeholder="John Doe"/>
@@ -41,8 +38,7 @@
                             <label id = "expirationDate">EXPIRATION</label>
                             <input type = "text" id = "month" name = "expmonth" placeholder = "MM" aria-labelledby = "expirationDate">
                             <input type = "text" id = "year" name = "expyear" placeholder = "YY" aria-labelledby = "expirationDate"/>
-                        </div>
-                    </div> 
+                        </div> 
                 </div>
             </div>
             <button type="submit">Submit</button>

@@ -1,0 +1,35 @@
+body{
+    background-color: lightslategray;
+}
+
+#content{
+    width: 80%;
+    margin: 0 auto;
+    align-self: center;
+    background-color: white;
+    padding: 20px;
+}
+
+#courseName{
+
+}
+
+#courseCode{
+
+}
+
+#enrollStudent{
+
+}
+
+table{
+    margin-top: 15px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}

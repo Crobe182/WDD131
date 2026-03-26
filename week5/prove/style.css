@@ -1,85 +1,214 @@
-body {
-    font-family: Arial, sans-serif;
+/* ===========================
+   BASE / RESET
+=========================== */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
 }
 
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #ffffff;
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ===========================
+   HEADER
+=========================== */
 header {
     text-align: center;
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 1.5rem;
+    padding: 1rem 1rem 0.75rem;
+    border-bottom: 1px solid gold;
 }
 
+header h1 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    color: #111111;
+}
+
+/* ===========================
+   NAV
+=========================== */
 nav {
-    text-align: center;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid gold;
+    gap: 1.25rem;
 }
 
 nav a {
-    margin: 0 1rem;
     text-decoration: none;
-    color: #c00; /* matches red in your design */
+    color: #cc0000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
 }
 
-.card {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin: 1rem;
-    max-width: 400px;
-    width: 90%;
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   MAIN
+=========================== */
+main {
+    padding: 1.25rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ===========================
+   POST — MOBILE FIRST
+   Stack: meta → title → cover → description
+=========================== */
+.post {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr;
+    gap: 0.5rem;
+}
+
+/* Meta block */
+.post-meta {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    color: #333333;
+    gap: 0.1rem;
+    line-height: 1.6;
+    grid-row: 1/ 2;
+    grid-column: 2 / 3;
 }
 
-.card img {
-    max-width: 100%;
-    height: auto;
-    margin: 0.5rem 0;
-}
-
-.card h2 {
-    color: #c00;
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    text-align: center;
-}
-
-.card p {
-    text-align: center;
+.meta-stars {
+    color: #cc8800;
     font-size: 0.9rem;
-    margin: 0.5rem 0;
+    letter-spacing: 0.05em;
 }
 
+/* Post body */
+.post-body {
+    display: block;
+    gap: 0.75rem;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+/* Title */
+.post-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #cc0000;
+}
+
+/* Content: image + description stacked on mobile */
+.post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.post-content img {
+    align-self: center;
+}
+
+.book-cover {
+    width: 160px;
+    height: auto;
+    display: block;
+}
+
+.post-description {
+    font-size: 0.88rem;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
 footer {
     text-align: center;
-    font-weight: bold;
-    padding: 1rem;
-    width: 100%;
-    border-top: 1px solid #ccc;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid gold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    color: #222222;
+    margin-top: 1.5rem;
 }
 
-/* Larger screen layout */
+/* ===========================
+   DESKTOP LAYOUT
+=========================== */
 @media (min-width: 768px) {
-    .card {
-        flex-direction: row;
-        max-width: 800px;
+
+    header h1 {
+        font-size: 1.6rem;
     }
 
-    .card img {
-        margin-right: 1rem;
-        width: 200px;
+    main {
+        padding: 1.5rem 2rem;
     }
 
-    .card-content {
+    /* Two-column layout: narrow meta left, post body right */
+    .post {
+    display: grid;
+    grid-template-columns: 33% 67%;
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+    }
+
+    .post-meta {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-self: right;
+        min-width: 90px;
+        flex-shrink: 0;
+        padding-top: 0.25rem;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        border-right: 1px solid gold;
+    }
+
+    /* Post body fills remaining space */
+    .post-body {
+        display: block;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    .post-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
         text-align: left;
+    }
+
+    .post-content {
+
+    }
+
+    .post-meta {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .book-cover {
+        width: 180px;
+        flex-shrink: 0;
+    }
+
+    .post-description {
+        font-size: 0.9rem;
+        padding-top: 0.25rem;
     }
 }

@@ -3,30 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Kids Read For Fun</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>Kids Read For Fun</header>
+    <header>
+        <h1>Kids Read For Fun</h1>
+    </header>
 
-<nav>
-    <a href="#">About</a>
-    <a href="#">Archive</a>
-    <a href="#">Search</a>
-</nav>
+    <nav>
+        <a href="#">About</a>
+        <a href="#">Archive</a>
+        <a href="#">Search</a>
+    </nav>
 
-<div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/SeptimusHeapMagyk.jpg" alt="Magyk Book Cover">
-    <div class="card-content">
-        <h2>Septimus Heap Book One: Magyk</h2>
-        <p><em>July 5, 2022</em> | Ages 10-14 | Fantasy</p>
-        <p>⭐⭐⭐⭐</p>
-        <p>If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.</p>
-    </div>
-</div>
+    <main>
+        <article class="post">
 
-<footer>Jane Doe</footer>
+            <div class="post-meta">
+                <span class="meta-date">July 5, 2022</span>
+                <span class="meta-age">10-14</span>
+                <span class="meta-genre">Fantasy</span>
+                <span class="meta-stars">&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+
+            <div class="post-body">
+                <h2 class="post-title">Septimus Heap Book One: Magyk</h2>
+
+                <div class="post-content">
+                    <img
+                        src='https://upload.wikimedia.org/wikipedia/en/5/5f/Magkycover2.jpg'
+                        alt="Magyk Book Cover"
+                        class="book-cover"
+                    >
+                    <p class="post-description">If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.</p>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <span>Jane Doe</span>
+    </footer>
 
 </body>
 </html>

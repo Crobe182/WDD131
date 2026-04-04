@@ -5,37 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qwuizard</title>
     <meta name="description" content="A platform for users to create and take personalized quizzes.">
-    <link rel="stylesheet" href="styles/site.css">
-    <script src="scripts/main.js" defer></script>
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="javascript/index.js" defer></script>
 </head>
 <body>
     <header>
         <div>
-            <img src="images/QWZRD logo with wizard hat.png" alt="Logo">
+            <img class="logo" src="images/QWZRD logo with wizard hat - transparent background.png" alt="Logo">
         </div>
         <nav>
-            <ul>
+            <ul style="list-style: none;">
                 <li><a href="#">About</a></li>
                 <li><a href="#">How To Use</a></li>
-                <li><a href="#">Create New Qwuiz</a></li>
+                <li><a href="#" id="openModalBtn">Create New Qwuiz</a></li>
             </ul>
         </nav>
 
     </header>
     <main>
 
+        <p id="totalQuizzes">Total quizzes: ${totalQuizzes}</p>
+
+        <label for="topicFilter">Filter by Topic:</label>
+        <select id="topicFilter">
+            <option value="All">All Topics</option>
+            <option value="Math">Math</option>
+            <option value="History">History</option>
+            <option value="Science">Science</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <div id="modal" class="modal-hidden">
+            <div id="modal-content">
+                <span id="closeModalBtn" class="close-modal">X</span>
+                <h2>Create New Quiz</h2>
+
+                <form id="quizForm">
+                    <input type="text" id="title" placeholder="Quiz Title" required>
+                    <input type="number" id="questions" placeholder="Number of Questions" required>
+                    <input type="text" id="topic" placeholder="Quiz Topic" required>
+                    <textarea id="description" placeholder="Quiz Description" required></textarea>
+                    <button type="submit">Create Quiz</button>
+                </form>
+
+            </div>
+        </div>
+        
+        <div id="quizContainer">
+            
+        </div>
+
     </main>
     <footer>
         <div>
-            <img src="images/QWZRD logo with wizard hat.png" alt="Logo">
+            <img class="logo" src="images/QWZRD logo with wizard hat - transparent background.png" alt="Logo">
         </div>
-        <div>
+        <div id="footerNav">
             <a href="#">link one</a>
             <a href="#">link two</a>
             <a href="#">link three</a>
             <a href="#">link four</a>
         </div>
-        <div>
+        <div id="footerSocials">
             <a href="#">Facebook</a>
             <a href="#">Twitter</a>
             <a href="#">Instagram</a>
